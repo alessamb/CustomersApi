@@ -38,12 +38,12 @@ namespace CustomersApi.Controllers
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(IList<CustomerDto>))]
         public async Task<IActionResult> GetCustomers()
         {
-
+            //
             var result = _databaseContext.customers.Select(x => x.toDto()).ToList();
             return new OkObjectResult(result);
         }
 
-
+        
         [HttpDelete("id")]
         public async Task<Boolean> DeleteCustomer(long Id)
         {
